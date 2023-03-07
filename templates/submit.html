@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block main %}
+    <div class="text-left">
+        <br>
+        <h1 style="color: grey; font-family: Papyrus, fantasy;"> Your SPI is {{ spi }} </h1>
+        <br>
+    </div>
+    <div class="text-right">
+        <br>
+        <h1 style="color: grey; font-family: Papyrus, fantasy;"> Your CPI is {{ cpi }} </h1>
+        <br>
+    </div>
+{% if counts < 2 %}
+    <div class="container">
+
+        <form class="well form-horizontal" action="/" method="post"  id="spiform2">
+            <div class="mb-3">
+                <select id="semester" name="semester" required>
+                    <option value="" disabled selected>Semester</option>
+                    
+                    <option value="{{ sem }}">{{ sem }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-warning" >Calculate SPI for another Sem <span class="glyphicon glyphicon-send"></span></button>
+                </div>
+            </div>
+            <input class="mb-3" name="group" id="group" value="{{ group }}"></input>
+            <input class="mb-3" name="branch" id="branch" value="{{ branch }}"></input>
+        </form>
+
+        <script type="text/javascript">
+                document.getElementById("group").style.display = "none";
+                document.getElementById("branch").style.display = "none";
+        </script>
+    </div>
+{% endif %}
+{% endblock %}

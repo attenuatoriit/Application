@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+
+        <form class="well form-horizontal" action="/spi" method="post"  id="spiform">
+            <fieldset>
+
+                <!-- Form Name -->
+                {% if semester == 1 %}
+                    <legend> First Semester</legend>
+                {% endif %}
+
+                {% if semester == 2 %}
+                    <legend> Second Semester</legend>
+                {% endif %}
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> {{ phy }}</label>  
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select name="{{phy}}" id="{{phy}}" class="form-control selectpicker"required >
+                            <option value="" disabled selected>Select Grade</option>
+                            {% for grade in grades %}
+                                <option value="{{ grades[grade] }}">{{ grade }}</option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                {% for entry in mth[semester] %}
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">{{ entry }}</label>  
+                        <div class="col-md-4 selectContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                <select name="{{ entry }}" id="{{ entry }}" class="form-control selectpicker"required >
+                                <option value="" disabled selected>Select Grade</option>
+                                {% for grade in grades %}
+                                    <option value="{{ grades[grade] }}">{{ grade }}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Text input-->
+
+                {% for entry in courses[group] %}
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">{{ entry }}</label>  
+                        <div class="col-md-4 selectContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                <select name="{{ entry }}" id="{{ entry }}" class="form-control selectpicker"required >
+                                <option value="" disabled selected>Select Grade</option>
+                                {% for grade in grades %}
+                                    <option value="{{ grades[grade] }}">{{ grade }}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning" >Calculate SPI <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}

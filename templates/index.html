@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block title %}{% endblock %}
+
+
+
+{% block main %}
+        <!-- Navigation List -->
+<!--       <div class="container-fluid">
+
+            <ul class="m-3 nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark">Home</a>
+                </li>
+                <li class="ms-auto nav-item">
+                    <a class="nav-link text-dark">Know Your Co-ordinates</a>
+                </li>
+                <li class="ms-auto nav-item">
+                    <a class="nav-link text-dark">Fun</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark"></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Branch
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item">CSE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">EE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">ME</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">CHE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">CHM</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">CE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">MSE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">ECO</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">SDS</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">MSE</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">PHY</a>
+                       </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Group
+                    </a>
+                    <ul class="dropdown-menu">
+                       <li>
+                        <a class="dropdown-item">1</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">2</a>
+                       </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Semester
+                    </a>
+                    <ul class="dropdown-menu">
+                       <li>
+                        <a class="dropdown-item">1</a>
+                       </li>
+                       <li>
+                        <a class="dropdown-item">2</a>
+                       </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+--> 
+
+        <div class="text-center">
+            <br>
+            <h1 style="color: grey; font-family: Papyrus, fantasy;"> SPI Calculator </h1>
+            <br>
+            <form class="well form-horizontal" action="/" method="post">
+                <div class="mb-3">
+                    <div class="col-md-4 selectContainer">
+                    <select id="branch" name="branch" class="form-control selectpicker"required>
+                        <option value="" disabled selected>Branch</option>
+                        <option value="AE">AE</option>
+                        <option value="BSBE">BSBE</option>
+                        <option value="CE">CE</option>
+                        <option value="CHE">CHE</option>
+                        <option value="CHM">CHM</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECO">ECO</option>
+                        <option value="EE">EE</option>
+                        <option value="ES">ES</option>
+                        <option value="ME">ME</option>
+                        <option value="MSE">MSE</option>
+                        <option value="MTH">MTH</option>
+                        <option value="PHY">PHY</option>
+                        <option value="SDS">SDS</option>                     
+                    </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="col-md-4 selectContainer">
+                    <select id="group" name="group" class="form-control selectpicker"required>
+                        <option value="" disabled selected>Group</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="col-md-4 selectContainer">
+                    <select id="semester" name="semester" class="form-control selectpicker"required>
+                        <option value="" disabled selected>Semester</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    </div>
+                </div>
+                <button class="btn btn-warning" type="submit">Next</button>
+            </form>
+
+        </div>
+{% endblock %}
